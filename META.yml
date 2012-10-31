@@ -1,0 +1,34 @@
+---
+abstract: 'Run test programs as soon as they are modified'
+author:
+  - 'Gregor Goldbach <glauschwuffel@nomaden.org>'
+build_requires:
+  File::Basename: 0
+  Test::Differences: 0
+  Test::More: 0
+  Test::Spec: 0
+  constant: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300021, CPAN::Meta::Converter version 2.120921'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: App-autotest
+requires:
+  Cwd: 0
+  File::ChangeNotify: 0
+  File::Find: 0
+  File::Spec: 0
+  FindBin: 0
+  Moose: 0
+  TAP::Harness: 0
+  strict: 0
+  warnings: 0
+resources:
+  bugtracker: https://github.com/glauschwuffel/perl5-App-autotest/issues
+  homepage: https://github.com/glauschwuffel/perl5-App-autotest
+  repository: git://github.com/glauschwuffel/perl5-App-autotest.git
+version: 0.001

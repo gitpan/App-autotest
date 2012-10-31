@@ -1,0 +1,85 @@
+#! /usr/bin/env perl
+# ABSTRACT: run Perl5 test programs as soon as they are modified or created
+# PODNAME: autotest
+
+use strict;
+use warnings;
+
+use FindBin qw($Bin);
+use lib "$Bin/../lib";
+
+use App::autotest;
+
+my $app = App::autotest->new();
+exit( $app->run ? 0 : 1 );
+
+
+__END__
+=pod
+
+=head1 NAME
+
+autotest - run Perl5 test programs as soon as they are modified or created
+
+=head1 VERSION
+
+version 0.001
+
+=head1 SYNOPSIS
+
+  autotest
+
+=head1 DESCRIPTION
+
+C<autotest> is a program that runs your test programs whenever you change
+them. Using it you don't have to switch between your editor and the shell
+since your tests are run automatically when you save them.
+
+Think "Continuous Testing".
+
+=head1 AUTHOR
+
+Gregor Goldbach <glauschwuffel@nomaden.org>
+
+=head1 CONTRIBUTING
+
+The source code for C<autotest> lives on github:
+L<https://github.com/glauschwuffel/perl5-App-autotest>
+
+If you want to contribute a patch, fork my repository, make your change,
+and send me a pull request.
+
+=head1 BUGS
+
+Please report any bugs or feature requests to the issues list at Github:
+<http://github.com/glauschwuffel/perl5-App-autotest/issues>
+
+=head1 SEE ALSO
+
+L<Test::Continuous> has far more features. It runs the tests by running C<prove>
+in an extra process; C<autotest> runs the tests within the same process via L<TAP::Harness>.
+
+=head1 VERSION
+
+0.001
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 by Gregor Goldbach.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=head1 AUTHOR
+
+Gregor Goldbach <glauschwuffel@nomaden.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 by Gregor Goldbach.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
