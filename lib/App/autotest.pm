@@ -1,6 +1,6 @@
 package App::autotest;
 {
-  $App::autotest::VERSION = '0.001';
+  $App::autotest::VERSION = '0.002';
 }
 
 # ABSTRACT: main package for the autotest tool
@@ -13,13 +13,9 @@ use File::Find;
 use File::Spec;
 use Cwd;
 use File::ChangeNotify;
-use TAP::Harness;
 
-has harness => (
-    is      => 'rw',
-    isa     => 'TAP::Harness',
-    default => sub { _default_harness() }
-);
+use App::autotest::Test::Runner;
+use App::autotest::Test::Runner::Result::History;
 
 has test_directory => ( is => 'rw', isa => 'Str', default => 't' );
 
@@ -42,41 +38,17 @@ has after_change_or_new_hook => (
     }
 );
 
-has harness_runtests_result => (
-    is  => 'rw',
-    isa => 'TAP::Parser::Aggregator'
-);
+has history => ( is => 'rw',
+    default => sub { App::autotest::Test::Runner::Result::History->new } );
+
+has test_runner => ( is => 'rw',
+    default => sub { App::autotest::Test::Runner->new });
 
 sub run {
     my ($self) = @_;
 
     $self->run_tests_upon_startup;
     $self->run_tests_upon_change_or_creation;
-
-    return 1;
-}
-
-sub number_of_test_programs {
-    my ($self) = @_;
-
-    return scalar @{ $self->all_test_programs };
-}
-
-sub number_of_test_programs_run {
-    my ($self) = @_;
-
-    return scalar @{ $self->test_programs_run };
-}
-
-sub test_programs_run {
-    my ($self) = @_;
-
-    my $result = $self->harness_runtests_result;
-    return [] unless $result;
-    my @parsers = $result->parsers;
-
-    # filter it to get the names
-    return \@parsers;
 }
 
 sub run_tests_upon_startup {
@@ -84,19 +56,15 @@ sub run_tests_upon_startup {
 
     my $all_test_programs = $self->all_test_programs( $self->test_directory );
 
-    # do we have test programs at all?
-    return 1 unless @$all_test_programs;
-
-    $self->harness_runtests_result(
-        $self->harness->runtests(@$all_test_programs) );
-    return 1;
+    $self->run_tests(@$all_test_programs);
 }
 
 sub run_tests_upon_change_or_creation {
     my ($self) = @_;
 
     while (1) {
-        $self->harness->runtests( @{ $self->changed_and_new_files } );
+        $self->run_tests( @{ $self->changed_and_new_files } );
+
         last if $self->after_change_or_new_hook->();
     }
     return 1;
@@ -137,12 +105,20 @@ sub changed_and_new_files {
 
 }
 
-sub _default_harness {
-    my $args = {
-        verbosity => -3,
-        lib       => [ 'lib', 'blib/lib', 'blib/arch' ],
-    };
-    return TAP::Harness->new($args);
+sub run_tests {
+    my ($self, @tests)=@_;
+
+    my $result=$self->test_runner->run(@tests);
+    $self->history->perpetuate($result);
+
+    if ($self->history->things_just_got_better) {
+        $self->print("Things just got better.\n");
+    }
+}
+
+sub print {
+    my ($self, @rest)=@_;
+    print @rest;
 }
 
 1;
@@ -156,7 +132,7 @@ App::autotest - main package for the autotest tool
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 AUTHOR
 
