@@ -1,6 +1,6 @@
 package App::autotest::Test::Runner;
 {
-  $App::autotest::Test::Runner::VERSION = '0.002';
+  $App::autotest::Test::Runner::VERSION = '0.003';
 }
 
 # ABSTRACT: runs tests
@@ -58,7 +58,7 @@ App::autotest::Test::Runner - runs tests
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 INTERNAL METHODS
 
