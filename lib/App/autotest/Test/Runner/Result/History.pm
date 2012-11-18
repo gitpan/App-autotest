@@ -1,6 +1,6 @@
 package App::autotest::Test::Runner::Result::History;
 {
-  $App::autotest::Test::Runner::Result::History::VERSION = '0.003';
+  $App::autotest::Test::Runner::Result::History::VERSION = '0.004';
 }
 
 # ABSTRACT: collects test runner results
@@ -46,7 +46,7 @@ App::autotest::Test::Runner::Result::History - collects test runner results
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head2 perpetuate ($result)
 

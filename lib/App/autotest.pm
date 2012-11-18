@@ -1,6 +1,6 @@
 package App::autotest;
 {
-  $App::autotest::VERSION = '0.003';
+  $App::autotest::VERSION = '0.004';
 }
 
 # ABSTRACT: main package for the autotest tool
@@ -132,7 +132,7 @@ App::autotest - main package for the autotest tool
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 AUTHOR
 

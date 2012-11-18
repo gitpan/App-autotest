@@ -1,6 +1,6 @@
 package App::autotest::Test::Runner::Result;
 {
-  $App::autotest::Test::Runner::Result::VERSION = '0.003';
+  $App::autotest::Test::Runner::Result::VERSION = '0.004';
 }
 
 # ABSTRACT: represents the result of a test run
@@ -32,7 +32,7 @@ App::autotest::Test::Runner::Result - represents the result of a test run
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 AUTHOR
 

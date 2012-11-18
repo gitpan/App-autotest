@@ -25,8 +25,9 @@ requires:
   FindBin: 0
   Moose: 0
   TAP::Harness: 0
+  Test::Spec: 0.46
   perl: 5.006
   strict: 0
   warnings: 0
 resources: {}
-version: 0.003
+version: 0.004

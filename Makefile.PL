@@ -35,10 +35,11 @@ my %WriteMakefileArgs = (
     "FindBin" => 0,
     "Moose" => 0,
     "TAP::Harness" => 0,
+    "Test::Spec" => "0.46",
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.003",
+  "VERSION" => "0.004",
   "test" => {
     "TESTS" => "t/*.t t/features/*.t t/integration/*.t t/unit/*.t"
   }
