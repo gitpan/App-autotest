@@ -29,5 +29,8 @@ requires:
   perl: 5.006
   strict: 0
   warnings: 0
-resources: {}
-version: 0.004
+resources:
+  bugtracker: https://github.com/glauschwuffel/perl5-App-autotest/issues
+  homepage: https://github.com/glauschwuffel/perl5-App-autotest
+  repository: https://github.com/glauschwuffel/perl5-App-autotest
+version: 0.005

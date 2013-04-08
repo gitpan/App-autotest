@@ -1,6 +1,6 @@
 package App::autotest::Test::Runner::Result::History;
 {
-  $App::autotest::Test::Runner::Result::History::VERSION = '0.004';
+  $App::autotest::Test::Runner::Result::History::VERSION = '0.005';
 }
 
 # ABSTRACT: collects test runner results
@@ -46,7 +46,7 @@ App::autotest::Test::Runner::Result::History - collects test runner results
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head2 perpetuate ($result)
 
@@ -63,7 +63,7 @@ Gregor Goldbach <glauschwuffel@nomaden.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Gregor Goldbach.
+This software is copyright (c) 2013 by Gregor Goldbach.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

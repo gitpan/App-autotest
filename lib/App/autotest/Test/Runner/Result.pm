@@ -1,6 +1,6 @@
 package App::autotest::Test::Runner::Result;
 {
-  $App::autotest::Test::Runner::Result::VERSION = '0.004';
+  $App::autotest::Test::Runner::Result::VERSION = '0.005';
 }
 
 # ABSTRACT: represents the result of a test run
@@ -32,7 +32,7 @@ App::autotest::Test::Runner::Result - represents the result of a test run
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 
@@ -40,7 +40,7 @@ Gregor Goldbach <glauschwuffel@nomaden.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Gregor Goldbach.
+This software is copyright (c) 2013 by Gregor Goldbach.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

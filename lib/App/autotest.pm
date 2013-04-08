@@ -1,6 +1,6 @@
 package App::autotest;
 {
-  $App::autotest::VERSION = '0.004';
+  $App::autotest::VERSION = '0.005';
 }
 
 # ABSTRACT: main package for the autotest tool
@@ -132,7 +132,7 @@ App::autotest - main package for the autotest tool
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 
@@ -140,7 +140,7 @@ Gregor Goldbach <glauschwuffel@nomaden.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Gregor Goldbach.
+This software is copyright (c) 2013 by Gregor Goldbach.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
